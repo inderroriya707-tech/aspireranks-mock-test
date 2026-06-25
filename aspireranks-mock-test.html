@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test - AspireRanks | English (SSC Pattern) - 45 Questions</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F4F6F9;
+            --bg-ivory: #FAFBFD;
+
+            --brand-blue: #0A2540;
+            --brand-gold: #C5A059;
+            --accent-red: #D9383A;
+            --accent-green: #1F8B4C;
+
+            --text-dark: #1E293B;
+            --text-muted: #576574;
+            --text-light: #64748B;
+
+            --border-light: #E2E8F0;
+
+            --shadow-sm: 0 2px 4px rgba(10, 37, 64, 0.05);
+            --shadow-md: 0 8px 16px rgba(10, 37, 64, 0.06);
+            --shadow-lg: 0 12px 24px rgba(10, 37, 64, 0.08);
+
+            --font-main: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .text-center { text-align: center; }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .badge-premium {
+            background-color: rgba(10, 37, 64, 0.06);
+            color: var(--brand-blue);
+            border: 1px solid rgba(10, 37, 64, 0.12);
+        }
+
+        .badge-red {
+            background-color: rgba(219, 56, 58, 0.08);
+            color: var(--accent-red);
+            border: 1px solid rgba(219, 56, 58, 0.15);
+        }
+
+        h1, h2, h3 {
+            color: var(--brand-blue);
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .hero-section {
+            background-color: var(--bg-ivory);
+            border-bottom: 1px solid var(--border-light);
+            padding: 36px 0 28px 0;
+        }
+
+        .hero-title {
+            font-size: 26px;
+            color: var(--brand-blue);
+            margin-bottom: 6px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-tagline {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-red);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .status-bar-outer {
+            position: sticky;
+            top: 0;
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border-light);
+            padding: 12px 0;
+            z-index: 10;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .status-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .progress-track {
+            flex: 1;
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--brand-gold);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+
+        .progress-count {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        .timer-pill {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--brand-blue);
+            background: var(--bg-secondary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            min-width: 76px;
+            justify-content: center;
+        }
+
+        .timer-pill.urgent {
+            color: #FFFFFF;
+            background: var(--accent-red);
+        }
+
+        .test-section {
+            padding: 36px 0 56px 0;
+            min-height: 50vh;
+        }
+
+        .question-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--brand-gold);
+            border-radius: 6px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .question-meta {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            background: var(--bg-ivory);
+            border: 1px solid var(--border-light);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.1s ease;
+        }
+
+        .option:hover {
+            border-color: var(--brand-blue);
+        }
+
+        .option input[type="radio"] {
+            accent-color: var(--brand-blue);
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            pointer-events: none;
+        }
+
+        .option-text {
+            font-size: 14.5px;
+            color: var(--text-dark);
+        }
+
+        .option.selected {
+            border-color: var(--brand-blue);
+            background-color: rgba(10, 37, 64, 0.04);
+            transform: scale(0.99);
+        }
+
+        .auto-advance-note {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .score-outer {
+            display: none;
+            padding: 48px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .score-outer.visible { display: block; }
+
+        .score-card {
+            background: #FFFFFF;
+            border-top: 4px solid var(--brand-gold);
+            border-radius: 6px;
+            padding: 36px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .score-card .badge { margin-bottom: 12px; }
+
+        .score-number {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--brand-blue);
+            margin-bottom: 4px;
+        }
+
+        .score-number span {
+            font-size: 20px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .score-breakdown {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 18px 0;
+        }
+
+        .score-stat {
+            text-align: center;
+        }
+
+        .score-stat .num {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .score-stat .label {
+            font-size: 11px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .score-stat.correct .num { color: var(--accent-green); }
+        .score-stat.incorrect .num { color: var(--accent-red); }
+        .score-stat.skipped .num { color: var(--text-light); }
+
+        .score-sub {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .review-list {
+            text-align: left;
+            margin-top: 24px;
+            border-top: 1px dashed var(--border-light);
+            padding-top: 20px;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .review-item {
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--bg-secondary);
+            color: var(--text-muted);
+        }
+
+        .review-item:last-child { border-bottom: none; }
+
+        .review-item.is-correct { color: var(--accent-green); }
+        .review-item.is-incorrect { color: var(--accent-red); }
+        .review-item.is-skipped { color: var(--text-light); }
+
+        .retry-btn {
+            display: inline-block;
+            padding: 11px 26px;
+            background: transparent;
+            color: var(--brand-blue);
+            border: 1.5px solid var(--brand-blue);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.18s ease;
+            margin-top: 8px;
+        }
+
+        .retry-btn:hover {
+            background-color: rgba(10, 37, 64, 0.06);
+        }
+
+        .intro-card {
+            max-width: 520px;
+            margin: 40px auto;
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--brand-gold);
+            border-radius: 6px;
+            padding: 36px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .intro-stats {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin: 20px 0 24px 0;
+        }
+
+        .intro-stat .num {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--brand-blue);
+        }
+
+        .intro-stat .label {
+            font-size: 11px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .start-btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: var(--brand-blue);
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.18s ease, transform 0.18s ease;
+        }
+
+        .start-btn:hover {
+            background-color: #133459;
+            transform: translateY(-1px);
+        }
+
+        .copyright-bar {
+            background-color: #081C32;
+            padding: 20px 0;
+        }
+
+        .copyright-bar p {
+            color: var(--text-light);
+            font-size: 12.5px;
+            letter-spacing: 0.3px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .hidden { display: none; }
+
+        @media (max-width: 480px) {
+            .score-breakdown { gap: 14px; }
+            .intro-stats { gap: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <span class="badge badge-premium">Free Mock Test</span>
+            <h1 class="hero-title">English Mock Test</h1>
+            <div class="hero-tagline">SSC Pattern &middot; 45 Questions &middot; 30 Minutes</div>
+        </div>
+    </header>
+
+    <div class="container" id="introScreen">
+        <div class="intro-card">
+            <span class="badge badge-red">Before You Start</span>
+            <h2 style="margin-bottom: 10px;">Ready to Begin?</h2>
+            <p>Questions appear one at a time. Once you select an answer, the next question loads automatically &mdash; there's no going back, just like the real exam.</p>
+
+            <div class="intro-stats">
+                <div class="intro-stat">
+                    <div class="num">45</div>
+                    <div class="label">Questions</div>
+                </div>
+                <div class="intro-stat">
+                    <div class="num">30</div>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="intro-stat">
+                    <div class="num">1</div>
+                    <div class="label">Attempt</div>
+                </div>
+            </div>
+
+            <button class="start-btn" id="startBtn">Start Test</button>
+        </div>
+    </div>
+
+    <div class="status-bar-outer hidden" id="statusBar">
+        <div class="container">
+            <div class="status-row">
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-count" id="progressCount">Q1 / 45</span>
+                <div class="timer-pill" id="timerPill">30:00</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="test-section hidden" id="testSection">
+        <div class="container">
+            <div id="quizContainer"></div>
+            <div class="auto-advance-note">Selecting an answer automatically moves you to the next question.</div>
+        </div>
+    </section>
+
+    <div class="score-outer" id="scoreOuter">
+        <div class="container">
+            <div class="score-card">
+                <span class="badge badge-red">Result</span>
+                <div class="score-number" id="scoreNumber">0 <span>/ 45</span></div>
+                <p class="score-sub" id="scoreSub"></p>
+
+                <div class="score-breakdown">
+                    <div class="score-stat correct">
+                        <div class="num" id="correctCount">0</div>
+                        <div class="label">Correct</div>
+                    </div>
+                    <div class="score-stat incorrect">
+                        <div class="num" id="incorrectCount">0</div>
+                        <div class="label">Incorrect</div>
+                    </div>
+                    <div class="score-stat skipped">
+                        <div class="num" id="skippedCount">0</div>
+                        <div class="label">Skipped</div>
+                    </div>
+                </div>
+
+                <button class="retry-btn" id="retryBtn">Retake Test</button>
+
+                <div class="review-list" id="reviewList"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="copyright-bar">
+        <div class="container">
+            <p>&copy; 2026 AspireRanks. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const questions = [
+            { meta: "Error Spotting", text: "Each of the students have submitted their assignment.", options: ["Each of the students", "have submitted", "their assignment", "No error"], answer: 1 },
+            { meta: "Error Spotting", text: "Neither of the two roads lead to the station.", options: ["Neither of the two roads", "lead to", "the station", "No error"], answer: 1 },
+            { meta: "Error Spotting", text: "She is one of the best singer in our college.", options: ["She is one of", "the best singer", "in our college", "No error"], answer: 1 },
+            { meta: "Error Spotting", text: "He has been suffering from fever since three days.", options: ["He has been suffering", "from fever", "since three days", "No error"], answer: 2 },
+            { meta: "Error Spotting", text: "The number of accidents have increased this year.", options: ["The number of accidents", "have increased", "this year", "No error"], answer: 1 },
+            { meta: "Error Spotting", text: "I have read this book last year.", options: ["I have read", "this book", "last year", "No error"], answer: 0 },
+            { meta: "Error Spotting", text: "Everyone of the players were ready for the match.", options: ["Everyone of the players", "were ready", "for the match", "No error"], answer: 1 },
+            { meta: "Error Spotting", text: "Hardly had he reached the station when the train left.", options: ["Hardly had he reached", "the station", "when the train left", "No error"], answer: 3 },
+
+            { meta: "Synonym", text: "Choose the word most similar in meaning to: METICULOUS", options: ["Careless", "Thorough", "Hasty", "Indifferent"], answer: 1 },
+            { meta: "Synonym", text: "Choose the word most similar in meaning to: CANDID", options: ["Frank", "Secretive", "Hostile", "Confused"], answer: 0 },
+            { meta: "Synonym", text: "Choose the word most similar in meaning to: AMBIGUOUS", options: ["Clear", "Vague", "Certain", "Direct"], answer: 1 },
+            { meta: "Synonym", text: "Choose the word most similar in meaning to: BENEVOLENT", options: ["Cruel", "Generous", "Greedy", "Strict"], answer: 1 },
+            { meta: "Synonym", text: "Choose the word most similar in meaning to: TENACIOUS", options: ["Persistent", "Weak", "Lazy", "Flexible"], answer: 0 },
+            { meta: "Synonym", text: "Choose the word most similar in meaning to: ELOQUENT", options: ["Articulate", "Silent", "Confused", "Rude"], answer: 0 },
+            { meta: "Synonym", text: "Choose the word most similar in meaning to: AUTHENTIC", options: ["Fake", "Genuine", "Doubtful", "Borrowed"], answer: 1 },
+
+            { meta: "Antonym", text: "Choose the word most opposite in meaning to: ABUNDANT", options: ["Plentiful", "Scarce", "Excessive", "Generous"], answer: 1 },
+            { meta: "Antonym", text: "Choose the word most opposite in meaning to: OPTIMISTIC", options: ["Hopeful", "Pessimistic", "Confident", "Cheerful"], answer: 1 },
+            { meta: "Antonym", text: "Choose the word most opposite in meaning to: GENUINE", options: ["Fake", "Real", "Honest", "Sincere"], answer: 0 },
+            { meta: "Antonym", text: "Choose the word most opposite in meaning to: ARROGANT", options: ["Proud", "Humble", "Rude", "Bold"], answer: 1 },
+            { meta: "Antonym", text: "Choose the word most opposite in meaning to: CONCEAL", options: ["Hide", "Reveal", "Cover", "Disguise"], answer: 1 },
+            { meta: "Antonym", text: "Choose the word most opposite in meaning to: VOLUNTARY", options: ["Willing", "Compulsory", "Free", "Optional"], answer: 1 },
+            { meta: "Antonym", text: "Choose the word most opposite in meaning to: ANCIENT", options: ["Old", "Modern", "Aged", "Historic"], answer: 1 },
+
+            { meta: "One-Word Substitution", text: "A person who can speak two languages is called:", options: ["Linguist", "Bilingual", "Translator", "Polyglot"], answer: 1 },
+            { meta: "One-Word Substitution", text: "A person who loves books is called:", options: ["Bibliophile", "Librarian", "Author", "Critic"], answer: 0 },
+            { meta: "One-Word Substitution", text: "A place where birds are kept is called:", options: ["Aquarium", "Aviary", "Zoo", "Sanctuary"], answer: 1 },
+            { meta: "One-Word Substitution", text: "One who studies the stars and planets is called:", options: ["Astrologer", "Astronomer", "Physicist", "Geologist"], answer: 1 },
+            { meta: "One-Word Substitution", text: "A person who walks in their sleep is called:", options: ["Insomniac", "Sleepwalker", "Sleeper", "Somnambulist"], answer: 3 },
+            { meta: "One-Word Substitution", text: "Government by the people is called:", options: ["Monarchy", "Democracy", "Autocracy", "Bureaucracy"], answer: 1 },
+
+            { meta: "Idioms & Phrases", text: "Choose the correct meaning of the idiom: 'To let the cat out of the bag'", options: ["To adopt a pet", "To reveal a secret", "To escape danger", "To cause trouble"], answer: 1 },
+            { meta: "Idioms & Phrases", text: "Choose the correct meaning of the idiom: 'Once in a blue moon'", options: ["Very often", "Rarely", "Every month", "Never"], answer: 1 },
+            { meta: "Idioms & Phrases", text: "Choose the correct meaning of the idiom: 'To beat around the bush'", options: ["To speak directly", "To avoid the main topic", "To work hard", "To finish quickly"], answer: 1 },
+            { meta: "Idioms & Phrases", text: "Choose the correct meaning of the idiom: 'To add fuel to the fire'", options: ["To calm a situation", "To make a bad situation worse", "To start a fire", "To help someone"], answer: 1 },
+            { meta: "Idioms & Phrases", text: "Choose the correct meaning of the idiom: 'A piece of cake'", options: ["A difficult task", "A very easy task", "A tasty dessert", "An unfinished job"], answer: 1 },
+
+            { meta: "Cloze Test", text: "She has been working ___ this company for five years.", options: ["since", "from", "at", "with"], answer: 0 },
+            { meta: "Cloze Test", text: "He apologized ___ being late to the meeting.", options: ["for", "of", "to", "about"], answer: 0 },
+            { meta: "Cloze Test", text: "The committee is looking ___ the matter carefully.", options: ["after", "into", "for", "at"], answer: 1 },
+            { meta: "Cloze Test", text: "I am not interested ___ joining the club.", options: ["on", "in", "for", "at"], answer: 1 },
+            { meta: "Cloze Test", text: "They succeeded ___ completing the project on time.", options: ["in", "at", "for", "with"], answer: 0 },
+            { meta: "Cloze Test", text: "He is good ___ solving puzzles.", options: ["in", "at", "on", "with"], answer: 1 },
+
+            { meta: "Spelling Correction", text: "Choose the correctly spelled word:", options: ["Recieve", "Receive", "Receeve", "Receve"], answer: 1 },
+            { meta: "Spelling Correction", text: "Choose the correctly spelled word:", options: ["Occassion", "Ocasion", "Occasion", "Ocassion"], answer: 2 },
+            { meta: "Spelling Correction", text: "Choose the correctly spelled word:", options: ["Embarrass", "Embarass", "Embarras", "Embarrasse"], answer: 0 },
+            { meta: "Spelling Correction", text: "Choose the correctly spelled word:", options: ["Definately", "Definitly", "Definitely", "Definatly"], answer: 2 },
+
+            { meta: "Active-Passive Voice", text: "Choose the correct passive form of: 'She writes a letter.'", options: ["A letter is written by her.", "A letter was written by her.", "A letter has written by her.", "A letter writes by her."], answer: 0 },
+            { meta: "Active-Passive Voice", text: "Choose the correct passive form of: 'They are building a bridge.'", options: ["A bridge is built by them.", "A bridge is being built by them.", "A bridge was being built by them.", "A bridge has being built by them."], answer: 1 },
+            { meta: "Active-Passive Voice", text: "Choose the correct passive form of: 'He has completed the task.'", options: ["The task is completed by him.", "The task was completed by him.", "The task has been completed by him.", "The task had completed by him."], answer: 2 },
+            { meta: "Active-Passive Voice", text: "Choose the correct passive form of: 'Open the door.'", options: ["The door is opened.", "Let the door be opened.", "The door was opened.", "The door has opened."], answer: 1 },
+
+            { meta: "Sentence Improvement", text: "Improve the underlined part: 'He is senior than me.'", options: ["senior to me", "more senior than me", "senior from me", "No improvement"], answer: 0 },
+            { meta: "Sentence Improvement", text: "Improve the underlined part: 'I am knowing him since childhood.'", options: ["I have known him since childhood.", "I know him since childhood.", "I am knowing him from childhood.", "No improvement"], answer: 0 },
+            { meta: "Sentence Improvement", text: "Improve the underlined part: 'She is married with a doctor.'", options: ["married to a doctor", "married by a doctor", "married for a doctor", "No improvement"], answer: 0 },
+            { meta: "Sentence Improvement", text: "Improve the underlined part: 'He insisted to come with us.'", options: ["insisted on coming with us", "insisted for coming with us", "insisted at coming with us", "No improvement"], answer: 0 }
+        ];
+
+        const TOTAL_TIME = 30 * 60;
+
+        const introScreen = document.getElementById('introScreen');
+        const statusBar = document.getElementById('statusBar');
+        const testSection = document.getElementById('testSection');
+        const quizContainer = document.getElementById('quizContainer');
+        const progressFill = document.getElementById('progressFill');
+        const progressCount = document.getElementById('progressCount');
+        const timerPill = document.getElementById('timerPill');
+        const scoreOuter = document.getElementById('scoreOuter');
+        const scoreNumber = document.getElementById('scoreNumber');
+        const scoreSub = document.getElementById('scoreSub');
+        const correctCountEl = document.getElementById('correctCount');
+        const incorrectCountEl = document.getElementById('incorrectCount');
+        const skippedCountEl = document.getElementById('skippedCount');
+        const reviewList = document.getElementById('reviewList');
+        const startBtn = document.getElementById('startBtn');
+        const retryBtn = document.getElementById('retryBtn');
+
+        let currentIndex = 0;
+        let userAnswers = new Array(questions.length).fill(null);
+        let timeLeft = TOTAL_TIME;
+        let timerInterval = null;
+        let finished = false;
+
+        function formatTime(seconds) {
+            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const s = (seconds % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerPill.textContent = formatTime(timeLeft);
+                if (timeLeft <= 60) {
+                    timerPill.classList.add('urgent');
+                }
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    finishTest();
+                }
+            }, 1000);
+        }
+
+        function renderQuestion() {
+            const q = questions[currentIndex];
+            progressCount.textContent = `Q${currentIndex + 1} / ${questions.length}`;
+            progressFill.style.width = `${(currentIndex / questions.length) * 100}%`;
+
+            let optionsHtml = '';
+            q.options.forEach((opt, oIndex) => {
+                optionsHtml += `
+                    <label class="option" data-index="${oIndex}">
+                        <input type="radio" name="currentQ" value="${oIndex}">
+                        <span class="option-text">${opt}</span>
+                    </label>
+                `;
+            });
+
+            quizContainer.innerHTML = `
+                <div class="question-card">
+                    <div class="question-meta">Question ${currentIndex + 1} &middot; ${q.meta}</div>
+                    <div class="question-text">${q.text}</div>
+                    <div class="options-list">${optionsHtml}</div>
+                </div>
+            `;
+
+            quizContainer.querySelectorAll('.option').forEach(optionEl => {
+                optionEl.addEventListener('click', () => {
+                    if (finished) return;
+                    const chosen = parseInt(optionEl.getAttribute('data-index'));
+                    optionEl.classList.add('selected');
+                    userAnswers[currentIndex] = chosen;
+
+                    setTimeout(() => {
+                        if (currentIndex < questions.length - 1) {
+                            currentIndex++;
+                            renderQuestion();
+                        } else {
+                            finishTest();
+                        }
+                    }, 280);
+                });
+            });
+        }
+
+        function finishTest() {
+            if (finished) return;
+            finished = true;
+            clearInterval(timerInterval);
+
+            let correct = 0, incorrect = 0, skipped = 0;
+            let reviewHtml = '';
+
+            questions.forEach((q, i) => {
+                const ans = userAnswers[i];
+                let status, statusClass;
+                if (ans === null) {
+                    skipped++;
+                    status = 'Skipped';
+                    statusClass = 'is-skipped';
+                } else if (ans === q.answer) {
+                    correct++;
+                    status = 'Correct';
+                    statusClass = 'is-correct';
+                } else {
+                    incorrect++;
+                    status = `Incorrect (Correct: ${q.options[q.answer]})`;
+                    statusClass = 'is-incorrect';
+                }
+                reviewHtml += `<div class="review-item ${statusClass}">Q${i + 1}. ${q.meta} &mdash; ${status}</div>`;
+            });
+
+            progressFill.style.width = '100%';
+            statusBar.classList.add('hidden');
+            testSection.classList.add('hidden');
+
+            scoreNumber.innerHTML = `${correct} <span>/ ${questions.length}</span>`;
+            scoreSub.textContent = timeLeft <= 0
+                ? "Time's up! Here's how you performed."
+                : "Here's how you performed on this set.";
+            correctCountEl.textContent = correct;
+            incorrectCountEl.textContent = incorrect;
+            skippedCountEl.textContent = skipped;
+            reviewList.innerHTML = reviewHtml;
+
+            scoreOuter.classList.add('visible');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function startTest() {
+            introScreen.classList.add('hidden');
+            statusBar.classList.remove('hidden');
+            testSection.classList.remove('hidden');
+            currentIndex = 0;
+            userAnswers.fill(null);
+            timeLeft = TOTAL_TIME;
+            finished = false;
+            timerPill.classList.remove('urgent');
+            timerPill.textContent = formatTime(timeLeft);
+            renderQuestion();
+            startTimer();
+        }
+
+        startBtn.addEventListener('click', startTest);
+
+        retryBtn.addEventListener('click', () => {
+            scoreOuter.classList.remove('visible');
+            introScreen.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
